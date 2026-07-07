@@ -1,0 +1,304 @@
+/* =========================================================
+   Nori Tarui — academic homepage
+   Tokens
+   ========================================================= */
+:root {
+  --paper: #f7f5f0;
+  --paper-alt: #ece5d4;
+  --ink: #20262b;
+  --ink-soft: #4b5560;
+  --navy: #16283a;
+  --teal: #2e6c6a;
+  --hanko: #a83a2c;
+  --line: rgba(22, 40, 58, 0.14);
+  --line-strong: rgba(22, 40, 58, 0.28);
+
+  --display: "Fraunces", "Iowan Old Style", ui-serif, Georgia, serif;
+  --body: "Source Sans 3", "Inter", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --max: 780px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--hanko); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--hanko);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Hanko signature mark ----------
+   A small stamp motif standing in for a seal/chop —
+   used at full size once in the hero, and as a bullet
+   glyph everywhere lists need a marker. */
+.hanko {
+  display: inline-block;
+  flex: none;
+  color: var(--hanko);
+}
+
+/* ---------- Nav ---------- */
+header.site-nav {
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(247, 245, 240, 0.92);
+  backdrop-filter: saturate(140%) blur(6px);
+  z-index: 10;
+}
+header.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.brand {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--navy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand:hover { color: var(--navy); }
+.brand .hanko { width: 18px; height: 18px; }
+
+nav.links { display: flex; gap: 22px; }
+nav.links a {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+nav.links a:hover,
+nav.links a[aria-current="page"] {
+  color: var(--navy);
+  border-bottom-color: var(--hanko);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--navy);
+  color: var(--paper);
+}
+.hero .contours {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+}
+.hero .wrap {
+  position: relative;
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+.hero .eyebrow {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cfe0dd;
+  margin: 0 0 14px;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  letter-spacing: 0.005em;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero .hanko { width: 36px; height: 36px; }
+.hero .role-line {
+  font-size: 1.05rem;
+  color: #dbe6e4;
+  max-width: 56ch;
+  margin: 0 0 22px;
+}
+.hero .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero .cta-row a {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--paper);
+  border: 1px solid rgba(247,245,240,0.4);
+  border-radius: 3px;
+  padding: 7px 12px;
+  text-decoration: none;
+}
+.hero .cta-row a:hover {
+  border-color: var(--hanko);
+  color: var(--paper);
+  background: rgba(168,58,44,0.25);
+}
+
+/* ---------- Sections ---------- */
+main section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+}
+main section:last-of-type { border-bottom: none; }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.section-head .hanko { width: 13px; height: 13px; }
+h2.section-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+}
+
+.affil-list { list-style: none; margin: 0; padding: 0; }
+.affil-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.affil-list li:last-child { border-bottom: none; }
+.affil-list .hanko { width: 12px; height: 12px; margin-top: 5px; }
+.affil-list .role { font-weight: 600; color: var(--ink); }
+.affil-list .org a { color: var(--ink-soft); }
+.affil-list .org a:hover { color: var(--hanko); }
+
+.lede {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.tag {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--teal);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 3px 11px;
+  background: var(--paper-alt);
+}
+
+.btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  padding: 9px 14px;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+}
+.btn:hover { background: var(--navy); color: var(--paper); }
+.btn.primary { background: var(--hanko); border-color: var(--hanko); color: var(--paper); }
+.btn.primary:hover { background: #8c3125; border-color: #8c3125; }
+
+/* ---------- Publications / project lists ---------- */
+.pub-group { margin-bottom: 30px; }
+.pub-group h3 {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  margin: 0 0 14px;
+}
+ol.pub-list, ul.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: pub;
+}
+ol.pub-list li, ul.pub-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.96rem;
+}
+ol.pub-list li:last-child, ul.pub-list li:last-child { border-bottom: none; }
+.pub-list .yr {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-right: 2px;
+}
+.pub-list .venue { font-style: italic; color: var(--ink-soft); }
+.pub-note { font-size: 0.88rem; color: var(--ink-soft); margin: 3px 0 0 0; }
+
+/* ---------- Teaching term blocks ---------- */
+.term {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.term:last-child { border-bottom: none; }
+.term h3 {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 4px;
+}
+.term .office-hours { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 10px; }
+.course { margin: 6px 0; font-size: 0.96rem; }
+.course .code { font-family: var(--mono); color: var(--hanko); margin-right: 6px; }
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 34px 0 50px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer a { color: var(--ink-soft); }
+footer a:hover { color: var(--hanko); }
+
+@media (max-width: 640px) {
+  nav.links { gap: 14px; }
+  .hero h1 { gap: 10px; }
+  footer .wrap { flex-direction: column; }
+}
