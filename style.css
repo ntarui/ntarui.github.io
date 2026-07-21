@@ -112,7 +112,9 @@ nav.links a[aria-current="page"] {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background: var(--navy);
+   background:
+    linear-gradient(180deg, rgba(22,40,58,0.35), rgba(22,40,58,0.55)),
+    url("img/ocean_kaimana.jpg") center center / cover no-repeat;
   color: var(--paper);
 }
 .hero .contours {
