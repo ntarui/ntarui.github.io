@@ -112,9 +112,7 @@ nav.links a[aria-current="page"] {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-   background:
-    linear-gradient(180deg, rgba(22,40,58,0.35), rgba(22,40,58,0.55)),
-    url("img/ocean_kaimana.jpg") center center / cover no-repeat;
+  background: var(--navy);
   color: var(--paper);
 }
 .hero .contours {
@@ -129,6 +127,21 @@ nav.links a[aria-current="page"] {
   padding-top: 64px;
   padding-bottom: 56px;
 }
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.headshot {
+  flex: none;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(247, 245, 240, 0.55);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+.hero-text { min-width: 0; }
 .hero .eyebrow {
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -302,5 +315,7 @@ footer a:hover { color: var(--hanko); }
 @media (max-width: 640px) {
   nav.links { gap: 14px; }
   .hero h1 { gap: 10px; }
+  .hero-flex { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .headshot { width: 88px; height: 88px; }
   footer .wrap { flex-direction: column; }
 }
